@@ -107,6 +107,9 @@ public class LinkedList {
         if (n < 0) {
             throw new IllegalArgumentException("n cannot be negative");
         }
+        if (head == null) {
+            return null;
+        }
         return nthFromEnd(n, head, head, 0);
     }
 
