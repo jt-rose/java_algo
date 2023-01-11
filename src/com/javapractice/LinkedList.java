@@ -104,6 +104,9 @@ public class LinkedList {
     }
 
     public String getNthFromEnd(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("n cannot be negative");
+        }
         return nthFromEnd(n, head, head, 0);
     }
 
