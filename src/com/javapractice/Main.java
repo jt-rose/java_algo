@@ -13,6 +13,11 @@ public class Main {
     System.out.println(LL.getNthFromEnd(2));
     System.out.println(LL.getNthFromEnd(1));
     System.out.println(LL.getNthFromEnd(0));
+    System.out.println(LL.findMiddle());
+
+    LL.addTail("PARIS");
+    LL.addTail("BEIJING");
+    System.out.println(LL.findMiddle());
 //    System.out.println(LL.contains("NY"));
 //    System.out.println(LL.contains("TOKYO"));
 //    System.out.println(LL.contains("???"));

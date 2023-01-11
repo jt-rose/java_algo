@@ -139,6 +139,33 @@ public class LinkedList {
         }
     }
 
+    public String findMiddle() {
+        int trailingIndex = 0;
+        var trailingNode = head;
+
+        int advanceIndex = 0;
+        var advanceNode = head;
+
+        if (advanceNode == null) {
+            return null;
+        }
+
+        boolean hitEndpoint = false;
+        while (!hitEndpoint) {
+            if (advanceNode.next == null) {
+                hitEndpoint = true;
+            } else {
+                advanceNode = advanceNode.next;
+                advanceIndex++;
+                if (advanceIndex / 2 > trailingIndex) {
+                    trailingNode = trailingNode.next;
+                    trailingIndex++;
+                }
+            }
+        }
+        return trailingNode.val;
+    }
+
     public Node getHead() {
         return head;
     }
