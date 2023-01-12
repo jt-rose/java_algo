@@ -18,6 +18,7 @@ public class Main {
     LL.addTail("PARIS");
     LL.addTail("BEIJING");
     System.out.println(LL.findMiddle());
+    System.out.println(MStack.reverse("elephant"));
 //    System.out.println(LL.contains("NY"));
 //    System.out.println(LL.contains("TOKYO"));
 //    System.out.println(LL.contains("???"));
