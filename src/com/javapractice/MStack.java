@@ -30,7 +30,7 @@ public class MStack {
                 }
             }
         }
-        return true;
+        return enclosures.isEmpty();
     }
 
     private static boolean isEnclosureOpening(Character ch) {
