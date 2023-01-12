@@ -24,6 +24,9 @@ public class MStack {
             if (isEnclosureOpening(ch)) {
                 enclosures.push(ch);
             } else if (isEnclosureClosing(ch)) {
+                if (enclosures.isEmpty()) {
+                    return false;
+                }
                 var lastEnc = enclosures.pop();
                 if (!isMatchingEnclosure(lastEnc, ch)) {
                     return false;
