@@ -34,9 +34,21 @@ public class Main {
 //        System.out.println(stack.peek());
 //        System.out.println(stack.isEmpty());
 
-        var q = new MQueue(new int[]{1,2,3});
-        System.out.println(q.getQueue());
-        q.reverse();
-        System.out.println(q.getQueue());
+        var q = new ArrayQueue();
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        System.out.println(q.peek());
+        q.dequeue();
+        var removed = q.dequeue();
+        System.out.println(removed);
+
+//        q.reverse();
+//        System.out.println(q.getQueue());
+//        var m = new int[5];
+//        for (int val: m) {
+//            System.out.println(val);
+//        }
+//        System.out.println(m.length);
     }
 }
