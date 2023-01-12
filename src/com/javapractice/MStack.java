@@ -3,6 +3,9 @@ package com.javapractice;
 import java.util.Stack;
 
 public class MStack {
+    static private final char[] openingCharacters =  "([<{".toCharArray();
+    static private final char[] closingCharacters = ")]>}".toCharArray();
+
     static public String reverse(String word) {
         if (word == null) {
             throw new IllegalArgumentException("word cannot be null");
@@ -38,11 +41,11 @@ public class MStack {
 
     private static boolean isEnclosureOpening(Character ch) {
         var isEnclosure = false;
-        var enclosures = "([<{";
 
-        for (Character enclosure: enclosures.toCharArray()) {
+        for (Character enclosure: openingCharacters) {
             if (enclosure.equals(ch)) {
                 isEnclosure = true;
+                break;
             }
         }
 
@@ -51,11 +54,11 @@ public class MStack {
 
     private static boolean isEnclosureClosing(Character ch) {
         var isEnclosure = false;
-        var enclosures = ")]>}";
 
-        for (Character enclosure: enclosures.toCharArray()) {
+        for (Character enclosure: closingCharacters) {
             if (enclosure.equals(ch)) {
                 isEnclosure = true;
+                break;
             }
         }
 
