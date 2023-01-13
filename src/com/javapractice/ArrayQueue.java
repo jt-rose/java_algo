@@ -3,9 +3,13 @@ package com.javapractice;
 public class ArrayQueue {
 
     private int[] queue;
+    private int start;
+    private int end; // inclusive
 
     public ArrayQueue() {
         queue = new int[5];
+        start = 0;
+        end = 0;
     }
 
     public int[] getQueue() {
@@ -14,56 +18,46 @@ public class ArrayQueue {
 
     // enqueue
     public void enqueue(int value) {
-        var len = getActualLength();
+        if (end < 4) {
 
-        if (len == 5) {
-            System.out.println("Cannot add to queue, already full");
+            queue[end] = value;
+            end++;
+        } else if (start > 0){
+            start--;
+            queue[start] = value;
         } else {
-            queue[len] = value;
+            System.out.println("Queue is already full!");
         }
     }
 
     // dequeue
     public Integer dequeue() {
-        var len = getActualLength();
-
-        if (len == 0) {
-            return null;
-        } else {
-            var item = queue[len - 1];
-            queue[len - 1] = 0;
+        if (!isEmpty()) {
+            var item = queue[start];
+            start++;
             return item;
+        } else {
+            return null;
         }
     }
 
     // peek
     public Integer peek() {
-        var len = getActualLength();
-        if (len == 0) {
+        if (start != end && end > 0) {
+            return queue[start];
+        } else {
             return null;
         }
-
-        return queue[len - 1];
-    }
-
-    private int getActualLength() {
-        var len = 0;
-        for (int val: queue) {
-            if (val != 0) {
-                len++;
-            }
-        }
-        return len;
     }
 
     // isEmpty
     public boolean isEmpty() {
-        return getActualLength() == 0;
+        return start == end;
     }
 
     // isFull
     public boolean isFull() {
-        return getActualLength() == 5;
+        return start == 0 && end == 4;
     }
 
 }
