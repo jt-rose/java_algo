@@ -52,6 +52,9 @@ public class Main {
         sq.add(5);
         System.out.println(sq.remove());
 
+        System.out.println(FirstUniqueChar.getFirstNonRepeatingChar("a green" +
+                " apple is good"));
+
 //        q.reverse();
 //        System.out.println(q.getQueue());
 //        var m = new int[5];
