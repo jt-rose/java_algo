@@ -43,6 +43,15 @@ public class Main {
         var removed = q.dequeue();
         System.out.println(removed);
 
+        var sq = new SQueue(1);
+        sq.add(2);
+        sq.add(3);
+        sq.add(4);
+
+        System.out.println(sq.remove());
+        sq.add(5);
+        System.out.println(sq.remove());
+
 //        q.reverse();
 //        System.out.println(q.getQueue());
 //        var m = new int[5];
