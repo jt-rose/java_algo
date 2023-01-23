@@ -55,6 +55,9 @@ public class Main {
         System.out.println(FirstUniqueChar.getFirstNonRepeatingChar("a green" +
                 " apple is good"));
 
+        System.out.println(FirstUniqueChar.getFirstRepeatingChar("green " +
+                "apples are tasty"));
+
 //        q.reverse();
 //        System.out.println(q.getQueue());
 //        var m = new int[5];

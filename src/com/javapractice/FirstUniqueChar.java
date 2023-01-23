@@ -1,6 +1,8 @@
 package com.javapractice;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FirstUniqueChar {
     public static String getFirstNonRepeatingChar(String text) {
@@ -18,6 +20,18 @@ public class FirstUniqueChar {
         for (String letter: letters) {
             if (letterFrequencies.get(letter) == 1) {
                 return letter;
+            }
+        }
+        return null;
+    }
+
+    static public Character getFirstRepeatingChar(String text) {
+        var found = new HashSet<Character>();
+        for (Character c: text.toCharArray()) {
+            if (found.contains(c)) {
+                return c;
+            } else {
+                found.add(c);
             }
         }
         return null;
