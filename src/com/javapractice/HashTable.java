@@ -6,15 +6,13 @@ public class HashTable {
     private LinkedList<KeyValuePair>[] table = new LinkedList[5];
 
     public void put(String key, int val) {
-        // get index from hash and format key value pair object
+        // get index from hash
         var idx = hash(key);
-        var kvPair = new KeyValuePair(key, val);
 
         // if no item present, create linked list and add first item
         if (table[idx] == null) {
-            var ll = new LinkedList<KeyValuePair>();
-            ll.add(kvPair);
-            table[idx] = ll;
+            table[idx] = new LinkedList<KeyValuePair>();
+            table[idx].add(new KeyValuePair(key, val));
         } else {
 //          if items present, iterate through to check for already
 //           existing key - if found, replace, if not found, add new value
@@ -25,22 +23,22 @@ public class HashTable {
                 }
             }
 
-            table[idx].add(kvPair);
+            table[idx].add(new KeyValuePair(key, val));
         }
     }
 
     public Integer get(String key) {
         var idx = hash(key);
-        if (idx < 0 || idx > 5) {
-            return null;
-        } else {
-            for (KeyValuePair item: table[idx]) {
-                if (item.key.equals(key)) {
-                    return item.val;
-                }
-            }
+        if (table[idx] == null) {
             return null;
         }
+
+        for (KeyValuePair item: table[idx]) {
+            if (item.key.equals(key)) {
+                return item.val;
+            }
+        }
+        return null;
     }
 
     public void remove(String key) {
