@@ -66,24 +66,34 @@ public class Main {
 //        }
 //        System.out.println(m.length);
 
-        var hashtable = new HashTable();
-        hashtable.put("Jeff", 35);
-        hashtable.put("Nathan", 1);
-        System.out.println(hashtable.get("Jeff"));
-        System.out.println(hashtable.get("Nathan"));
-        hashtable.put("Jameson", 4);
-        hashtable.put("Nathan", 2);
+//        var hashtable = new HashTable();
+//        hashtable.put("Jeff", 35);
+//        hashtable.put("Nathan", 1);
+//        System.out.println(hashtable.get("Jeff"));
+//        System.out.println(hashtable.get("Nathan"));
+//        hashtable.put("Jameson", 4);
+//        hashtable.put("Nathan", 2);
+//
+//        System.out.println(hashtable.get("Nathan"));
+//
+//        hashtable.remove("Jeff");
+//        System.out.println(hashtable.get("Jeff"));
+//
+//        // check for collisions
+//        hashtable.put("A", 65);
+//        hashtable.put("F", 70);
+//
+//        System.out.println(hashtable.get("A"));
+//        System.out.println(hashtable.get("F"));
 
-        System.out.println(hashtable.get("Nathan"));
+        var btree = new BinaryTree(5);
+        btree.insert(3);
+        btree.insert(7);
+        btree.insert(1);
+        btree.insert(2);
+        btree.insert(100);
 
-        hashtable.remove("Jeff");
-        System.out.println(hashtable.get("Jeff"));
-
-        // check for collisions
-        hashtable.put("A", 65);
-        hashtable.put("F", 70);
-
-        System.out.println(hashtable.get("A"));
-        System.out.println(hashtable.get("F"));
+        System.out.println(btree.find(2));
+        System.out.println(btree.find(200));
     }
 }
